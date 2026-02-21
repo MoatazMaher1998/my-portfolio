@@ -1,0 +1,26 @@
+{
+  "name": "moataz-maher-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "nuxt": "^3.14.0",
+    "vue": "^3.5.0",
+    "vue-router": "^4.4.0",
+    "vuetify": "^3.7.0",
+    "@mdi/font": "^7.4.47"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "^1.6.0",
+    "vite-plugin-vuetify": "^2.0.4",
+    "sass-embedded": "^1.77.8",
+    "typescript": "^5.6.0"
+  }
+}
