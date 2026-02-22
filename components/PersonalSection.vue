@@ -31,7 +31,7 @@
             <div class="story-block">
 
               <div class="story-hero">
-                <img src="/avatar.png" alt="Moataz Maher" class="story-avatar" />
+                <img :src="pub('avatar.png')" alt="Moataz Maher" class="story-avatar" />
                 <div>
                   <div class="story-badge">
                     <v-icon size="20" color="#22d3ee">mdi-swim</v-icon>
@@ -58,7 +58,7 @@
                 <div class="brand-card">
                   <div class="brand-header">
                     <div class="brand-logo-wrap">
-                      <img src="/piranha-logo.avif" alt="Piranha logo" class="brand-logo" />
+                      <img :src="pub('piranha-logo.avif')" alt="Piranha logo" class="brand-logo" />
                     </div>
                     <div>
                       <h4 class="brand-name">Piranha</h4>
@@ -118,9 +118,9 @@
             <div class="gallery">
 
               <div class="gallery-row single">
-                <div class="gallery-item" @click="lightboxSrc = '/moataz-swimming-2.jpg'">
+                <div class="gallery-item" @click="lightboxSrc = pub('moataz-swimming-2.jpg')">
                   <img
-                    src="/moataz-swimming-2.jpg"
+                    :src="pub('moataz-swimming-2.jpg')"
                     alt="Moataz Maher — Champion celebration"
                     class="gallery-img contain-img"
                   />
@@ -131,9 +131,9 @@
               </div>
 
               <div class="gallery-row single">
-                <div class="gallery-item" @click="lightboxSrc = '/moataz-swimming-3.jpg'">
+                <div class="gallery-item" @click="lightboxSrc = pub('moataz-swimming-3.jpg')">
                   <img
-                    src="/moataz-swimming-3.jpg"
+                    :src="pub('moataz-swimming-3.jpg')"
                     alt="Moataz Maher — Butterfly stroke"
                     class="gallery-img pos-top"
                   />
@@ -144,9 +144,9 @@
               </div>
 
               <div class="gallery-row">
-                <div class="gallery-item" @click="lightboxSrc = '/moataz-swimming-4.jpg'">
+                <div class="gallery-item" @click="lightboxSrc = pub('moataz-swimming-4.jpg')">
                   <img
-                    src="/moataz-swimming-4.jpg"
+                    :src="pub('moataz-swimming-4.jpg')"
                     alt="Moataz Maher — Race start"
                     class="gallery-img"
                   />
@@ -154,9 +154,9 @@
                     <v-icon size="22" color="white">mdi-magnify-plus-outline</v-icon>
                   </div>
                 </div>
-                <div class="gallery-item" @click="lightboxSrc = '/moataz-swimming-5.jpg'">
+                <div class="gallery-item" @click="lightboxSrc = pub('moataz-swimming-5.jpg')">
                   <img
-                    src="/moataz-swimming-5.jpg"
+                    :src="pub('moataz-swimming-5.jpg')"
                     alt="Moataz Maher — Pool"
                     class="gallery-img"
                   />
@@ -199,6 +199,9 @@
 <script setup lang="ts">
 const revealed = ref(false)
 const lightboxSrc = ref<string | null>(null)
+
+const { app } = useRuntimeConfig()
+const pub = (name: string) => app.baseURL.replace(/\/$/, '') + '/' + name
 </script>
 
 <style scoped lang="scss">

@@ -56,7 +56,7 @@
                   variant="outlined"
                   size="large"
                   class="mt-6"
-                  href="/Moataz_Maher_Mid_Level_Full_Stack_Stack.pdf"
+                  :href="resumeHref"
                   download
                 >
                   <v-icon start>mdi-download</v-icon>
@@ -100,6 +100,11 @@
     </v-container>
   </section>
 </template>
+
+<script setup lang="ts">
+const { app } = useRuntimeConfig()
+const resumeHref = app.baseURL.replace(/\/$/, '') + '/Moataz_Maher_Mid_Level_Full_Stack_Stack.pdf'
+</script>
 
 <style scoped lang="scss">
 .about-section {
